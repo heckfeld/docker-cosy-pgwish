@@ -1,4 +1,4 @@
-FROM ubuntu:trusty
+FROM debian:stretch
 
 # install everything for building and running
 RUN apt-get update && \
