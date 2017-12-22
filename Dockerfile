@@ -13,7 +13,7 @@ RUN apt-get update && \
 
 # build and install
 RUN cd /tmp && \
-    git clone https://gitlab.3utilities.com/mike/cosy-pgwish.git && \
+    git clone https://github.com/heckfeld/cosy-pgwish.git && \
     cd cosy-pgwish && \
     autoreconf -iv && \
     ./configure && \
