@@ -42,7 +42,5 @@ RUN cd /tmp && \
     rm -fr cosy-pgwish \
            cosy-addr-server \
            cosy-setup
-    
-RUN cd /home && chown -R operator:users operator
 
 # CMD /bin/bash
