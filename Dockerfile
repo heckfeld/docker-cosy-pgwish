@@ -19,6 +19,14 @@ RUN cd /tmp && \
     ./configure && \
     make install
 
+# setup cosy environment
+RUN cd /tmp && \
+    git clone https://github.com/heckfeld/cosy-setup.git && \
+    cd cosy-setup && \
+    autoreconf -iv && \
+    ./configure --prefix=/home/operator && \
+    make install
+
 # Cleanup everything used for building
 RUN apt-get -y remove --purge autoconf automake libtool build-essential g++ git ; \
     apt-get -y autoremove --purge
