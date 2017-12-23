@@ -21,6 +21,14 @@ RUN cd /tmp && \
 
 # setup cosy environment
 RUN cd /tmp && \
+    git clone https://github.com/heckfeld/cosy-addr-server.git && \
+    cd cosy-addr-server && \
+    autoreconf -iv && \
+    ./configure --prefix=/home/operator && \
+    make install
+    
+# setup addr_serv
+RUN cd /tmp && \
     git clone https://github.com/heckfeld/cosy-setup.git && \
     cd cosy-setup && \
     autoreconf -iv && \
@@ -31,6 +39,10 @@ RUN cd /tmp && \
 RUN apt-get -y remove --purge autoconf automake libtool build-essential g++ git ; \
     apt-get -y autoremove --purge
 RUN cd /tmp && \
-    rm -fr cosy-pgwish
+    rm -fr cosy-pgwish \
+           cosy-addr-server \
+           cosy-setup
+    
+RUN cd /home && chown -R operator:users operator
 
 # CMD /bin/bash
