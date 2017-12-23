@@ -25,7 +25,7 @@ RUN cd /tmp && \
     cd cosy-setup && \
     autoreconf -iv && \
     ./configure --prefix=/home/operator && \
-    make install
+    chmod +x genconf && make install
 
 # Cleanup everything used for building
 RUN apt-get -y remove --purge autoconf automake libtool build-essential g++ git ; \
