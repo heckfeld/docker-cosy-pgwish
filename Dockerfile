@@ -16,7 +16,7 @@ RUN cd /tmp && \
     git clone https://github.com/heckfeld/cosy-pgwish.git && \
     cd cosy-pgwish && \
     autoreconf -iv && \
-    ./configure && \
+    ./configure --prefix=/mnt/cc-lx/linux/fgen && \
     make install
 
 # setup cosy environment
@@ -24,7 +24,7 @@ RUN cd /tmp && \
     git clone https://github.com/heckfeld/cosy-addr-server.git && \
     cd cosy-addr-server && \
     autoreconf -iv && \
-    ./configure --prefix=/home/operator && \
+    ./configure --prefix=/mnt/cc-lx/linux/fgen && \
     make install
     
 # setup addr_serv
@@ -32,7 +32,7 @@ RUN cd /tmp && \
     git clone https://github.com/heckfeld/cosy-setup.git && \
     cd cosy-setup && \
     autoreconf -iv && \
-    ./configure --prefix=/home/operator && \
+    ./configure --prefix=/mnt/cc-lx/linux/fgen && \
     chmod +x genconf && make install
 
 # Cleanup everything used for building
