@@ -9,5 +9,5 @@ Mo 18. Dez 16:31:26 CET 2017
 # Anhängigkeiten
  cosy-pgwish
 
-docker build -t docker-cosy-pgwish ./
-docker run -it --rm docker-cosy-pgwish
+	docker build -t docker-cosy-pgwish ./
+	docker run -it --rm docker-cosy-pgwish
